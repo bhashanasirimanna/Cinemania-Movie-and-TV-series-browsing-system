@@ -35,12 +35,15 @@ Searching for Content
 - **View Results:** Browse through the search results and click on any title for more details.
   
 ## Screenshots
+
 *Home Page*
 ![Screenshot 2024-06-19 173009](https://github.com/bhashanasirimanna/Cinemania-Movie-and-TV-series-browsing-system/assets/146844863/11eef969-9eed-463a-9001-665f64eaa009)
 ![Screenshot 2024-06-19 173153](https://github.com/bhashanasirimanna/Cinemania-Movie-and-TV-series-browsing-system/assets/146844863/1b47de43-8fef-4fc1-ad49-be46a010e114)
 
+
 *Movie Details Page*
 ![Screenshot 2024-06-19 173044](https://github.com/bhashanasirimanna/Cinemania-Movie-and-TV-series-browsing-system/assets/146844863/047b6f81-bad2-44ae-961d-0b72fc1514f6)
+
 
 *TV series Details Page*
 ![Screenshot 2024-06-19 173106](https://github.com/bhashanasirimanna/Cinemania-Movie-and-TV-series-browsing-system/assets/146844863/066bee2f-f78a-400f-854e-127d612e99c4)
