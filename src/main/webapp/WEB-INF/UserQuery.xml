@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Querys>
+
+	<!-- Create table user Query -->
+	<query id="create_user_table">
+        <![CDATA[
+            CREATE TABLE user(
+				userID varchar(10) not null,
+				userName varchar(20),
+				password varchar(20),
+				email varchar(25),
+				dateOfBirth varchar(20),
+				primary key (userID)
+			)
+        ]]>
+	</query>
+
+	<!-- DROP TABLE userS Query -->
+	<query id="drop_table_user">
+         <![CDATA[        
+            DROP TABLE IF EXISTS user 
+        ]]>
+	</query>
+
+	<!-- Select all customer orders Query -->
+	<query id="insert_user">
+        <![CDATA[
+          	insert into user (userID, userName, password, email, dateOfBirth) 
+          	values (?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular user by id Query -->
+	<query id="user_by_id">
+         <![CDATA[        
+            select * from user where user.userID = ?
+        ]]>
+	</query>
+
+	<!-- Select all users -->
+	<query id="all_users">
+         <![CDATA[        
+            select * from user
+        ]]>
+	</query>
+
+	<!-- Delete a particular user by id Query -->
+	<query id="remove_user">
+         <![CDATA[        
+            delete from user where user.userID = ?
+        ]]>
+	</query>
+
+	<!-- Update a particular user by id Query -->
+	<query id="update_user">
+         <![CDATA[        
+            update user as e 
+            set e.userName = ?, e.password = ?, e.email = ?, e.dateOfBirth = ? 
+            where e.userID = ?
+        ]]>
+	</query>
+
+	<!-- Get user IDs Query -->
+	<query id="user_ids">
+         <![CDATA[        
+            select e.userID from user as e
+        ]]>
+	</query>
+
+
+	<!-- REVIEW QUERIES -->
+	<!-- Create table review Query -->
+	<query id="create_review_table">
+        <![CDATA[
+            CREATE TABLE review(
+				reviewID varchar(10) not null,
+				showName varchar(20),
+				description varchar(255),
+				postedDate datetime,
+				rating int default 5,
+				primary key (reviewID)
+			)
+        ]]>
+	</query>
+
+	<!-- DROP TABLE reviewS Query -->
+	<query id="drop_table">
+         <![CDATA[        
+            DROP TABLE IF EXISTS review 
+        ]]>
+	</query>
+
+	<!-- Select all customer orders Query -->
+	<query id="insert_review">
+        <![CDATA[
+          	insert into review (reviewID, showName, description, postedDate, rating) 
+          	values (?, ?, ?, now(), ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular review by id Query -->
+	<query id="review_by_id">
+         <![CDATA[        
+            select * from review where review.reviewID = ?
+        ]]>
+	</query>
+
+	<!-- Select all reviews -->
+	<query id="all_reviews">
+         <![CDATA[        
+            select * from review
+        ]]>
+	</query>
+
+	<!-- Delete a particular review by id Query -->
+	<query id="remove_review">
+         <![CDATA[        
+            delete from review where review.reviewID = ?
+        ]]>
+	</query>
+
+	<!-- Update a particular review by id Query -->
+	<query id="update_review">
+         <![CDATA[        
+            update review as e 
+            set e.showName = ?, e.description = ?, e.postedDate = ?, e.rating = ? 
+            where e.reviewID = ?
+        ]]>
+	</query>
+
+	<!-- Get review IDs Query -->
+	<query id="review_ids">
+         <![CDATA[        
+            select e.reviewID from review as e
+        ]]>
+	</query>
+	
+	<!-- Create table movie Query -->
+	<query id="create_movie_table">
+        <![CDATA[
+            CREATE TABLE movie(
+				movieID varchar(10) not null,
+				title varchar(255),
+				genre varchar(15),
+				releaseyear varchar(15),
+				director varchar(15),
+				description varchar(255),
+				rating varchar(20) DEFAULT '0',
+				language varchar(10),
+				poster varchar(50),
+				primary key (movieID)
+			)
+        ]]>
+	</query>
+
+	<!-- DROP TABLE MOVIES Query -->
+	<query id="drop_movie_table">
+         <![CDATA[        
+            DROP TABLE IF EXISTS movie
+        ]]>
+	</query>
+
+	<!-- insert movie Query -->
+	<query id="insert_movie">
+        <![CDATA[
+          	insert into movie (movieID, title, genre, releaseyear, director, description, rating, language, poster) 
+          	values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular movie by id Query -->
+	<query id="movie_by_id">
+         <![CDATA[        
+            select * from movie where movie.movieID = ?
+        ]]>
+	</query>
+
+	<!-- Select all movies -->
+	<query id="all_movies">
+         <![CDATA[        
+            select * from movie
+        ]]>
+	</query>
+
+	<!-- Delete a particular movie by id Query -->
+	<query id="remove_movie">
+         <![CDATA[        
+            delete from movie where movie.movieID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular movie by id Query -->
+	<query id="update_movie">
+         <![CDATA[  
+         
+         	update movie as m 
+            set m.title = ?, m.genre = ?, m.releaseyear = ?, m.director = ?, m.description = ?, m.rating = ?, m.language = ?, m.poster = ? 
+            where m.movieID = ?      
+        ]]>
+	</query>
+	
+		<!-- Get movie IDs Query -->
+	<query id="movie_ids">
+         <![CDATA[        
+            select m.movieID from movie as m
+        ]]>
+	</query>
+	
+	<query id="create_series_table">
+        <![CDATA[
+            CREATE TABLE series(
+				seriesID varchar(10) not null,
+				title varchar(255),
+				genre varchar(15),
+				releaseyear varchar(15),
+				director varchar(15),
+				description varchar(255),
+				rating varchar(20) DEFAULT '0',
+				language varchar(10),
+				episode varchar(10),
+				season varchar(10),
+				poster varchar(50),
+				primary key (seriesID)
+			)
+        ]]>
+	</query>
+
+	<!-- DROP TABLE series Query -->
+	<query id="drop_series_table">
+         <![CDATA[        
+            DROP TABLE IF EXISTS series
+        ]]>
+	</query>
+
+	<!--insert series Query -->
+	<query id="insert_series">
+        <![CDATA[
+          	insert into series (seriesID, title, genre, releaseyear, director, description, rating, language, episode, season, poster) 
+          	values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular series by id Query -->
+	<query id="series_by_id">
+         <![CDATA[        
+            select * from series where series.seriesID = ?
+        ]]>
+	</query>
+
+	<!-- Select all series -->
+	<query id="all_series">
+         <![CDATA[        
+            select * from series
+        ]]>
+	</query>
+
+	<!-- Delete a particular series by id Query -->
+	<query id="remove_series">
+         <![CDATA[        
+            delete from series where series.seriesID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular series by id Query -->
+	<query id="update_series">
+         <![CDATA[  
+         
+         	update series as s 
+            set s.title = ?, s.genre = ?, s.releaseyear = ?, s.director = ?, s.description = ?, s.rating = ?, s.language = ?, s.episode = ?, s.season = ?, s.poster = ? 
+            where s.seriesID = ?      
+        ]]>
+	</query>
+	
+		<!-- Get series IDs Query -->
+	<query id="series_ids">
+         <![CDATA[        
+            select s.seriesID from series as s
+        ]]>
+	</query>
+	
+</Querys>

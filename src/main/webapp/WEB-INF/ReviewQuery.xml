@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Querys>
+
+	<!-- Create table review Query -->
+	<query id="create_review_table">
+        <![CDATA[
+            CREATE TABLE review(
+				reviewID varchar(10) not null,
+				showName varchar(20),
+				description varchar(255),
+				postedDate date,
+				rating int default 5,
+				primary key (reviewID)
+			)
+        ]]>
+	</query>
+
+	<!-- DROP TABLE reviewS Query -->
+	<query id="drop_table">
+         <![CDATA[        
+            DROP TABLE IF EXISTS review 
+        ]]>
+	</query>
+
+	<!-- Select all customer orders Query -->
+	<query id="insert_review">
+        <![CDATA[
+          	insert into review (reviewID, showName, description, postedDate, rating) 
+          	values (?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular review by id Query -->
+	<query id="review_by_id">
+         <![CDATA[        
+            select * from review where review.reviewID = ?
+        ]]>
+	</query>
+
+	<!-- Select all reviews -->
+	<query id="all_reviews">
+         <![CDATA[        
+            select * from review
+        ]]>
+	</query>
+
+	<!-- Delete a particular review by id Query -->
+	<query id="remove_review">
+         <![CDATA[        
+            delete from review where review.reviewID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular review by id Query -->
+	<query id="update_review">
+         <![CDATA[        
+            update review as e 
+            set e.showName = ?, e.description = ?, e.rating = ? 
+            where e.reviewID = ?
+        ]]>
+	</query>
+	
+		<!-- Get review IDs Query -->
+	<query id="review_ids">
+         <![CDATA[        
+            select e.reviewID from review as e
+        ]]>
+	</query>
+
+</Querys>
